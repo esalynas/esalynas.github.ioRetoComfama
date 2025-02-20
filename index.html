@@ -472,27 +472,20 @@ h2 {
     text-align: center;
     max-width: 260px; /* Ajustar para que se vea mejor */
     width: 100%;
-    height: 300px;
-    }
-
-    .iframe-container {
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .excel-iframe {
-        width: 600px; /* Mantiene el tamaño original */
-        height: 371px;
-        border: none;
-        transform: scale(0.73); /* Reducimos el tamaño a la mitad */
-        transform-origin: top left; /* Ajusta el punto de escala */
-    }
+    height: auto; /* Permitir que la tarjeta se ajuste al contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Evitar que la imagen se salga de los bordes */
+}
 
 
     .excel-card img {
-        width: 100%;
-        border-radius: 8px;
-    }
+    width: 85%;
+    max-height: 200px; /* Ajusta el tamaño máximo de la imagen */
+    border-radius: 8px;
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+}
    
     /* ESTILOS SECCION 5: Recomendaciones*/
     
@@ -675,20 +668,6 @@ h2 {
         </div>
     </div>
     <img src="banner_small_end.png" alt="Banner pequeño" class="small-banner">
-    <!-- Botón "Ver más" que redirige a la sección 3 (Portafolio) -->
-    <p style="color: #000000;">Capacidad de los Mentores Internos
-        9 mentores internos.
-        Jornada laboral: 8:00 a.m. a 4:00 p.m. (8 horas por día).
-        Capacidad de atención:
-        Mentoría individual: 4 usuarios por día (2 horas por usuario).
-        Mentoría grupal: Hasta 40 usuarios por día (10 por sesión de 2 horas).
-        Cálculo Mensual:
-        
-        Días laborables promedio: 22 días.
-        Atenciones máximas:
-        Mentoría individual: 9 mentores * 4 usuarios * 22 días = 792 atenciones/mes.
-        Mentoría grupal: 9 mentores * 40 usuarios * 22 días = 7.920 atenciones/mes.
-        Comparación con la Meta: La meta mensual varía entre 1.260 y 2.709 personas. Con mentorías grupales, la capacidad actual supera ampliamente la meta. Con mentorías individuales, no se alcanzaría el objetivo.</p>
     <a href="#portfolio" class="button">Ver más</a>
 </section> 
 
@@ -752,8 +731,6 @@ h2 {
                 </div>
             </div>
         </div>
-        
-        <img src="flujo_estrategia.png" alt="Img estrategia" class="img-poder-aportar">
         <a href="#p3-compensacion" class="button">Ver más</a>
     </section>
 
@@ -773,7 +750,7 @@ h2 {
                         <div class="carousel-slide"><img src="graficos_mentoria/tarjeta_mentores_necesarios.png" alt="Evaluación 1"></div>
                         <div class="carousel-slide"><img src="graficos_mentoria/tarjeta_horas_faltantes.png" alt="Evaluación 2"></div>
                         <div class="carousel-slide"><img src="graficos_mentoria/tarjeta_costo_total.png" alt="Evaluación 3"></div>
-                        <div class="carousel-slide"><img src="graficos_mentoria/tarjeta_viabilidad.png.png" alt="Evaluación 4"></div>
+                        <div class="carousel-slide"><img src="graficos_mentoria/tarjeta_viabilidad.png" alt="Evaluación 4"></div>
                     </div>
                 </div>
             </div>
@@ -794,22 +771,10 @@ h2 {
             
             <!-- Plan de Comunicación -  -->
 <div class="subsection">
-    <h3>Plan de Comunicación</h3>
-    <div class="info-cards">
-        <div class="card">
-            <img src="comunicacion1.png" alt="Comunicación 1">
-            <p style="color: black;">Estrategias de comunicación interna</p>
-        </div>
-        <div class="card">
-            <img src="comunicacion2.png" alt="Comunicación 2">
-            <p style="color: black;">Canales de información efectivos</p>
-        </div>
-        <div class="card">
-            <img src="comunicacion3.png" alt="Comunicación 3">
-            <p style="color: black;">Participación y retroalimentación</p>
-        </div>
-    </div>
-</div>
+    
+<img src="impacto.png" alt="Img estrategia" class="img-poder-aportar">
+
+    
 <a href="#p4-excel" class="button">Ver más</a>
 </section>
 
@@ -818,46 +783,56 @@ h2 {
         <section id="p4-excel" class="section hidden">
             <div class="excel-container">
                  <!-- Enlace que redirige a Google Docs -->
-        <a href="https://docs.google.com/spreadsheets/d/1B5A_txOpZ5g6zRthdIZC0A7Rhw838DBB9y3qIAtWw68/edit?usp=sharing" target="_blank">
             <img src="EXCEL.png" alt="Imagen Excel" class="img-recomendaciones">
-        </a>
-                <!-- Previsualizador de archivo Excel usando Google Docs -->
-                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTu89laCRQwv87ufeV5RU5IH6x5vqxwMcRnY0KR4msyq6BpIQWir0rQdtLhOVumbbO0UudaNwwWwrhI/pubhtml?gid=1498575114&amp;single=true&amp;widget=true&amp;headers=false"></iframe>                        <div style="text-align: center; margin-top: 10px;color: black;">
-                            <strong>Análisis de base de datos empleados.</strong>
-                        </div>
+        
+                
                 <!-- Contenedor de tarjetas con imágenes de tablas y gráficos -->
                 <div class="excel-content">
                     <div class="excel-card">
+                        <p class="excel-text" style="color: black; font-weight: bold;">MIX Mentorías.</p>
+                        <img src="graficos_mentoria/grafico_distribucion_mentoria.png" alt="est1">
                         
                     </div>
                     <div class="excel-card">
-                        
+                        <p class="excel-text" style="color: black; font-weight: bold;">Atención 60/40.</p>
+                        <img src="costo_grupal.png" alt="est1"> 
                     </div>
                     <div class="excel-card">
-                        
+                        <p class="excel-text" style="color: black; font-weight: bold;">Atención 50/50.</p>
+                        <img src="apuesta50.png" alt="est1"> 
                     </div>
                     <div class="excel-card">
-                        
+                        <p class="excel-text" style="color: black; font-weight: bold;">Austeridad.</p>
+                        <img src="graficos_mentoria/grafico_ahorro_mixto.png" alt="est1"> 
                     </div>
                     <div class="excel-card">
-                        
+                        <p class="excel-text" style="color: black; font-weight: bold;">Automatización.</p>
+                        <img src="automatizacion.gif" alt="est1">
+                    </div>
+                    <div class="excel-card">
+                        <p class="excel-text" style="color: black; font-weight: bold;">Insignias digitales.</p>
+                        <img src="insignias.gif" alt="est1">
+                    </div>
+    
+                    <div class="excel-card">
+                        <p class="excel-text" style="color: black; font-weight: bold;">Modelo Autogestión.</p>
+                        <img src="autogestion.gif" alt="est1">
+                    </div>
+                    <div class="excel-card">
+                        <p class="excel-text" style="color: black; font-weight: bold;">Contratación Flexible.</p>
+                        <img src="contratacion.gif" alt="est1">
+                    </div>
+                    <div class="excel-card">
+                        <p class="excel-text" style="color: black; font-weight: bold;">Virtualidad + IA.</p>
+                        <img src="ia.gif" alt="est1">
                     </div>
                 </div>
             <!-- Imagen "Resumen" -->
         <div style="text-align: center; margin-top: 20px;">
-            <img src="resumen.png" alt="Resumen" class="img-recomendaciones">
+            <img src="vital.png" alt="Resumen" class="img-recomendaciones">
         </div>
 
-        <!-- Análisis debajo de la imagen -->
-        <div style="text-align: center; margin-top: 10px; color: black;">
-            <p><strong>Análisis:</strong></p>
-            <p>
-                En general, los salarios varían significativamente según el departamento, el género, el tipo de contrato y el nivel educativo.<br>
-                La brecha salarial por género es particularmente importante, lo que sugiere que las políticas de equidad salarial podrían necesitar ajustes.<br>
-                Además, los contratos de tipo aprendizaje ofrecen salarios más altos, lo cual es una tendencia curiosa que puede estar ligada a estrategias de atracción de talento.<br>
-                El nivel educativo también impacta los salarios, aunque de manera compleja, ya que no siempre los grados más altos reflejan una mayor compensación salarial.
-            </p>
-        </div>
+        
     </div>
     <a href="#recomendaciones" class="button">Ver más</a>
 </section>
@@ -874,40 +849,40 @@ h2 {
                 <div class="suggestion-card">
                     <div class="suggestion-card-inner">
                         <div class="suggestion-card-front">
-                            CALIDAD DE LOS DATOS.
+                            Creatividad e innovación.
                         </div>
                         <div class="suggestion-card-back">
-                            <p>Para asegurar la confiabilidad y la analítica del negocio.</p>
+                            <p>Para asegurar la continuidad y la analítica del negocio.</p>
                         </div>
                     </div>
                 </div>
                 <div class="suggestion-card">
                     <div class="suggestion-card-inner">
                         <div class="suggestion-card-front">
-                            PLANES Y POLÍTICAS DEFINIDOS.
+                            Mejora continua.
                         </div>
                         <div class="suggestion-card-back">
-                            <p>Para optimizar la gestión del talento</p>
+                            <p>Para optimizar los procesos y los resultados</p>
                         </div>
                     </div>
                 </div>
                 <div class="suggestion-card">
                     <div class="suggestion-card-inner">
                         <div class="suggestion-card-front">
-                            INNOVACIÓN CONSTANTE.
+                            Calidad Humana.
                         </div>
                         <div class="suggestion-card-back">
-                            <p>Para reducción de brechas de compensación.</p>
+                            <p>Beneficiando el proceso y las personas.</p>
                         </div>
                     </div>
                 </div>
                 <div class="suggestion-card">
                     <div class="suggestion-card-inner">
                         <div class="suggestion-card-front">
-                            TRANSPARENCIA Y COMUNICACIÓN.
+                            Habilidades técnicas y del ser.
                         </div>
                         <div class="suggestion-card-back">
-                            <p>Para fortalecer la confianza del talento en las compañías.</p>
+                            <p>Para gestionar los retos cotidianos.</p>
                         </div>
                     </div>
                 </div>

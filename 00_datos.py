@@ -84,7 +84,7 @@ def guardar_grafico(fig, nombre):
 
 # Capacidad de atención mensual
 fig, ax = plt.subplots(figsize=(8, 5))
-barras = ax.bar(["Mentoría Individual", "Mentoría Grupal"], [atenciones_individual, atenciones_grupal], color=['blue', 'green'])
+barras = ax.bar(["Mentoría Individual", "Mentoría Grupal"], [atenciones_individual, atenciones_grupal], color=['#b0b8d9', '#ee2b7b'])
 ax.set_title("Capacidad de Atención Mensual")
 ax.set_ylabel("Número de Atenciones")
 
@@ -99,14 +99,14 @@ plt.close(fig)
 
 # Cobertura de mentoría individual
 fig, ax = plt.subplots(figsize=(8, 5))
-ax.pie([horas_disponibles, horas_faltantes], labels=["Cobertura Actual", "Falta por Cubrir"], autopct='%1.1f%%', colors=['blue', 'red'])
+ax.pie([horas_disponibles, horas_faltantes], labels=["Cobertura Actual", "Falta por Cubrir"], autopct='%1.1f%%', colors=['#ee2b7b','#b0b8d9'])
 ax.set_title("Cobertura de Mentoría Individual")
 guardar_grafico(fig, "grafico_cobertura_mentoria.png")
 plt.close(fig)
 
 # Comparación de costos de mentoría
 fig, ax = plt.subplots(figsize=(8, 5))
-barras = ax.bar(["Mentoría Individual", "Mentoría Grupal"], [costo_total_individual, costo_total_grupal], color=['red', 'green'])
+barras = ax.bar(["Mentoría Individual", "Mentoría Grupal"], [costo_total_individual, costo_total_grupal], color=['#b0b8d9', '#ee2b7b'])
 ax.set_title("Comparación de Costos de Mentoría")
 ax.set_ylabel("Costo en millones de $")
 
@@ -120,14 +120,14 @@ plt.close(fig)
 
 # Distribución de mentoría (mixto)
 fig, ax = plt.subplots(figsize=(8, 5))
-ax.pie([personas_individual, personas_grupal], labels=["Mentoría Individual", "Mentoría Grupal"], autopct='%1.1f%%', colors=['red', 'green'])
+ax.pie([personas_individual, personas_grupal], labels=["Mentoría Individual", "Mentoría Grupal"], autopct='%1.1f%%', colors=['#b0b8d9', '#ee2b7b'])
 ax.set_title("Distribución de Mentoría Mixta")
 guardar_grafico(fig, "grafico_distribucion_mentoria.png")
 plt.close(fig)
 
 # Ahorro logrado con mentoría mixta
 fig, ax = plt.subplots(figsize=(8, 5))
-barras = ax.bar(["Presupuesto Disponible", "Costo Total Mixto"], [presupuesto_disponible, costo_total_mixto], color=['blue', 'orange'])
+barras = ax.bar(["Presupuesto Disponible", "Costo Total Mixto"], [presupuesto_disponible, costo_total_mixto], color=['#b0b8d9', '#ee2b7b'])
 ax.set_title("Ahorro con Estrategia Mixta")
 ax.set_ylabel("Costo en millones de $")
 
@@ -172,12 +172,9 @@ def crear_tarjeta(valor, titulo, nombre_archivo, color):
 crear_tarjeta(mentoria_individual, "Mentoría Individual\n(atenciones/mes)", "tarjeta_mentoria_individual.png", "blue")
 crear_tarjeta(mentoria_grupal, "Mentoría Grupal\n(atenciones/mes)", "tarjeta_mentoria_grupal.png", "green")
 
-print("Tarjetas guardadas en la carpeta 'graficos_mentoria'")
-print("Gráficos guardados en la carpeta 'graficos_mentoria'")
-
 # Gráfico: Cantidad de Mentores Necesarios
 fig, ax = plt.subplots(figsize=(6, 4))
-barra = ax.bar(["Mentores Actuales", "Mentores Necesarios"], [9, mentores_necesarios], color=['blue', 'red'])
+barra = ax.bar(["Mentores Actuales", "Mentores Necesarios"], [9, mentores_necesarios], color=['#b0b8d9', '#ee2b7b'])
 ax.set_title("Cantidad de Mentores Necesarios")
 ax.set_ylabel("Número de Mentores")
 
@@ -191,7 +188,7 @@ plt.close(fig)
 
 # Gráfico: Comparación de Costo Total vs. Presupuesto
 fig, ax = plt.subplots(figsize=(6, 4))
-barras = ax.bar(["Presupuesto Disponible", "Costo Total Necesario"], [presupuesto_disponible, costo_total], color=['green', 'red'])
+barras = ax.bar(["Presupuesto Disponible", "Costo Total Necesario"], [presupuesto_disponible, costo_total], color=['#b0b8d9', '#ee2b7b'])
 ax.set_title("Costo de Mentores Adicionales")
 ax.set_ylabel("Costo en millones de $")
 
@@ -206,8 +203,8 @@ plt.close(fig)
 # Gráfico: Viabilidad de Contratación
 fig, ax = plt.subplots(figsize=(6, 4))
 
-# Definir colores correctamente
-colores = ["red", "green"] if not viabilidad else ["green", "lightgreen"]
+# Definir colores personalizados
+colores = ["#ee2b7b", "#b0b8d9"] if costo_total >= presupuesto_disponible / 2 else ["#b0b8d9", "#ee2b7b"]
 
 ax.pie(
     [costo_total, presupuesto_disponible - costo_total], 
@@ -246,7 +243,7 @@ costo_total_str = f"${costo_total:,.0f}"
 def crear_tarjeta(valor, titulo, nombre_archivo, color):
     fig, ax = plt.subplots(figsize=(4, 2))
     ax.set_facecolor(color)
-    ax.text(0.5, 0.6, valor, fontsize=18, fontweight="bold", ha="center", color="white")  # Aquí eliminamos el formato adicional
+    ax.text(0.5, 0.6, valor, fontsize=18, fontweight="bold", ha="center", color="white")  
     ax.text(0.5, 0.2, titulo, fontsize=12, ha="center", color="white")
     ax.set_xticks([])
     ax.set_yticks([])
@@ -261,9 +258,9 @@ def crear_tarjeta(valor, titulo, nombre_archivo, color):
     plt.close(fig)
 
 # Crear tarjetas
-crear_tarjeta(horas_faltantes_str, "Horas Faltantes", "tarjeta_horas_faltantes.png", "red")
-crear_tarjeta(mentores_necesarios_str, "Mentores Necesarios", "tarjeta_mentores_necesarios.png", "blue")
-crear_tarjeta(costo_total_str, "Costo Total de Mentores", "tarjeta_costo_total.png", "purple")
+crear_tarjeta(horas_faltantes_str, "Horas Faltantes", "tarjeta_horas_faltantes.png", "#b0b8d9")
+crear_tarjeta(mentores_necesarios_str, "Mentores Necesarios", "tarjeta_mentores_necesarios.png", "#ee2b7b")
+crear_tarjeta(costo_total_str, "Costo Total de Mentores", "tarjeta_costo_total.png", "#b0b8d9")
 crear_tarjeta(viabilidad, "Viabilidad", "tarjeta_viabilidad.png", "green" if viabilidad == "Sí" else "red")
 
 print("Tarjetas guardadas en la carpeta 'graficos_mentoria'")
