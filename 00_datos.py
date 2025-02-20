@@ -169,8 +169,8 @@ def crear_tarjeta(valor, titulo, nombre_archivo, color):
     plt.close(fig)
 
 # Crear tarjetas
-crear_tarjeta(mentoria_individual, "Mentoría Individual\n(atenciones/mes)", "tarjeta_mentoria_individual.png", "blue")
-crear_tarjeta(mentoria_grupal, "Mentoría Grupal\n(atenciones/mes)", "tarjeta_mentoria_grupal.png", "green")
+crear_tarjeta(mentoria_individual, "Mentoría Individual\n(atenciones/mes)", "tarjeta_mentoria_individual.png", "#b0b8d9")
+crear_tarjeta(mentoria_grupal, "Mentoría Grupal\n(atenciones/mes)", "tarjeta_mentoria_grupal.png", "#ee2b7b")
 
 # Gráfico: Cantidad de Mentores Necesarios
 fig, ax = plt.subplots(figsize=(6, 4))
@@ -261,6 +261,6 @@ def crear_tarjeta(valor, titulo, nombre_archivo, color):
 crear_tarjeta(horas_faltantes_str, "Horas Faltantes", "tarjeta_horas_faltantes.png", "#b0b8d9")
 crear_tarjeta(mentores_necesarios_str, "Mentores Necesarios", "tarjeta_mentores_necesarios.png", "#ee2b7b")
 crear_tarjeta(costo_total_str, "Costo Total de Mentores", "tarjeta_costo_total.png", "#b0b8d9")
-crear_tarjeta(viabilidad, "Viabilidad", "tarjeta_viabilidad.png", "green" if viabilidad == "Sí" else "red")
+crear_tarjeta(viabilidad, "Viabilidad", "tarjeta_viabilidad.png", "#ee2b7b" if viabilidad == "Sí" else "#b0b8d9")
 
 print("Tarjetas guardadas en la carpeta 'graficos_mentoria'")
